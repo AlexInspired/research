@@ -4,14 +4,6 @@ package com.interview.mock.leetcode.easy;
 import java.util.Arrays;
 
 public class TwoSum {
-    public static void main(String[] args) {
-        int[] nums = {3, 2, 4};
-        TwoSum twoSum = new TwoSum();
-//        int[] result = twoSum.twoSum(nums, 6);
-        int[] result = twoSum.twoSumv2(nums, 6);
-
-     int i = 1;
-    }
 
 // [2nlogn + n] vs n2
     public int[] twoSumv2(int[] nums, int target){
