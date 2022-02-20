@@ -1,23 +1,22 @@
 package com.practice.hackerrank.recursion;
 
-import java.util.Arrays;
-import java.util.List;
-
 public class ContiguousMaxSum {
 
-    List<Integer> arr = Arrays.asList(-2, -3, 4, -1, -2, 1, 5, -3);
+//    int[] arr = {2, -3, 4, -1, -2, 1, 5, -3};
+    // int[] arr = {-2,1};
 
-    public int count(){
-        int maxSum = 0;
+    public int maxSubArray(int[] arr) {
+        int maxSum = arr[0];
         int sum = 0;
-        for(int i = 0; i < arr.size(); i++){
-            sum = arr.get(i);
-            for(int j = i + 1; j < arr.size(); j++){
-                sum = sum + arr.get(j);
-                if(maxSum < sum) maxSum = sum;
+        for (int i = 0; i < arr.length; i++) {
+            sum = arr[i];
+            if (maxSum < sum) maxSum = sum;
+            for (int j = i + 1; j < arr.length; j++) {
+                sum = sum + arr[j];
+                if (maxSum < sum) maxSum = sum;
             }
         }
 
-        return maxSum;
+        return Math.max(sum, maxSum);
     }
 }

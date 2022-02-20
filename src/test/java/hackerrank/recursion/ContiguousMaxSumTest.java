@@ -9,10 +9,10 @@ import static org.junit.Assert.assertEquals;
 public class ContiguousMaxSumTest {
 
     @Test
-    public void testTilesPlot() {
+    public void testCMS() {
         ContiguousMaxSum contiguousMaxSumTest = new ContiguousMaxSum();
-
-        assertEquals(7 , contiguousMaxSumTest.count());
+        int[] arr = {-1, 0, -2};
+        assertEquals(0 , contiguousMaxSumTest.maxSubArray(arr));
 
     }
 
