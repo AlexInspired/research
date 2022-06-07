@@ -1,6 +1,6 @@
-package com.practice.leetcode.array;
+package com.practice.leetcode.linkedlist;
 
-import com.practice.leetcode.array.MergeTwoSortedLists;
+import com.practice.leetcode.linkedlist.MergeTwoSortedLists;
 import org.junit.Test;
 
 public class MergeTwoSortedListsTest {
