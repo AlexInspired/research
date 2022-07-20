@@ -1,40 +1,31 @@
 package com.practice.leetcode.trees;
 
-import java.util.List;
-
 public class UniqueBinarySearchTrees {
 
-    int count = 0;
-
     public int numTrees(int n) {
-        countTrees(List.of(1, 2, 3));
-        return count;
+        return catalanDP(n);
     }
 
-    public void countTrees(List list) {
-        if (list == null) return;
-        if (list.size() == 1) {
-            count++;
-            return;
+    int catalanDP(int n) {
+        // Table to store results of subproblems
+        int catalan[] = new int[n + 2];
+
+        // Initialize first two values in table
+        catalan[0] = 1;
+        catalan[1] = 1;
+
+        // Fill entries in catalan[]
+        // using recursive formula
+        for (int i = 2; i <= n; i++) {
+            catalan[i] = 0;
+            for (int j = 0; j < i; j++) {
+                catalan[i]
+                        += catalan[j] * catalan[i - j - 1];
+            }
         }
 
-        for (int i = 0; i < list.size(); i++) {
-            countTrees(prepareLeftSublist(list, i));
-            countTrees(prepareRightSublist(list, i));
-        }
+        // Return last entry
+        return catalan[n];
     }
 
-    private List prepareLeftSublist(List original, int parentPos) {
-        if (parentPos == 0) {
-            return null;
-        }
-        return original.subList(0, parentPos);
-    }
-
-    private List prepareRightSublist(List original, int parentPos) {
-        if (parentPos == original.size() - 1) {
-            return null;
-        }
-        return original.subList(parentPos + 1, original.size());
-    }
 }
