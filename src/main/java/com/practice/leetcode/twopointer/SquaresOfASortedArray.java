@@ -6,7 +6,8 @@ public class SquaresOfASortedArray {
         int[] result = new int[A.length];
         int s = 0;
         int i = 0;
-        int j = 0;for (int k = 0; k < A.length; k++) {
+        int j = 0;
+        for (int k = 0; k < A.length; k++) {
             if (A[k] < 0) {
                 j++;
             }
