@@ -9,7 +9,7 @@ public class LetterCombinationsOfAPhoneNumberTest {
     @Test
     public void test() {
         LetterCombinationsOfAPhoneNumber letterCombinationsOfAPhoneNumber = new LetterCombinationsOfAPhoneNumber();
-        String given = "23";
+        String given = "234";
         letterCombinationsOfAPhoneNumber.letterCombinations(given);
     }
 

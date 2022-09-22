@@ -1,41 +1,33 @@
 package com.practice.leetcode.recursion;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 //Input: digits = "23"
 //        Output: ["ad","ae","af","bd","be","bf","cd","ce","cf"]
 public class LetterCombinationsOfAPhoneNumber {
 
-    Map<Integer, String> stringBYNumber = new HashMap<>();
+    private static final String[] KEY_PAD = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
 
     public List<String> letterCombinations(String digits) {
-        init();
-
-        findComb(digits);
-
-        return new ArrayList<>();
+        List<String> res = new ArrayList<String>();
+        if (digits.length() == 0)
+            return res;
+        backtrack(digits, 0, new StringBuilder(), res);
+        return res;
     }
 
-    private void findComb(String digits) {
+    void backtrack(String digits, int idx, StringBuilder temp, List<String> res) {
+        if (idx == digits.length()) {
+            res.add(new String(temp));
+            return;
+        }
+        char[] keys = KEY_PAD[digits.charAt(idx) - '0'].toCharArray();
 
-        //23
-
-
+        for (char c : keys) {
+            temp.append(c);
+            backtrack(digits, idx + 1, temp, res);
+            temp.deleteCharAt(temp.length() - 1);
+        }
     }
-
-    private void init() {
-        stringBYNumber.put(1, "");
-        stringBYNumber.put(2, "abc");
-        stringBYNumber.put(3, "def");
-        stringBYNumber.put(4, "ghi");
-        stringBYNumber.put(5, "jkl");
-        stringBYNumber.put(6, "mno");
-        stringBYNumber.put(7, "pqrs");
-        stringBYNumber.put(8, "tuv");
-        stringBYNumber.put(9, "wxyz");
-    }
-
 }
