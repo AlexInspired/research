@@ -1,4 +1,4 @@
-package com.practice.leetcode.warmup;
+package com.practice.leetcode.unionfind.warmup;
 
 import com.practice.leetcode.warmup.LXSolution;
 import org.junit.Assert;

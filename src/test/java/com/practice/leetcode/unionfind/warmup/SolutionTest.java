@@ -1,4 +1,4 @@
-package com.practice.leetcode.warmup;
+package com.practice.leetcode.unionfind.warmup;
 
 import com.practice.leetcode.warmup.Solution;
 //import com.practice.leetcode.warmup.TwoSum;

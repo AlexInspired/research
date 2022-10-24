@@ -1,4 +1,4 @@
-package com.practice.leetcode.warmup;
+package com.practice.leetcode.unionfind.warmup;
 
 import com.practice.leetcode.warmup.CurrentDateTime;
 import lombok.extern.slf4j.Slf4j;
