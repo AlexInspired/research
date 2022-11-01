@@ -13,7 +13,11 @@ public class FindIfPathExistsInGraphTest {
         // given
         FindIfPathExistsInGraph findIfPathExistsInGraph = new FindIfPathExistsInGraph();
         int n = 3;
-        int[][] edges = new int[][]{{0,1},{1,2},{2,0}};
+        int[][] edges = new int[][]{
+                {0,1},
+                {1,2},
+                {2,0}
+        };
         int source = 0;
         int destination = 2;
 
