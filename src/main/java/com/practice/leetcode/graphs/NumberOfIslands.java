@@ -1,5 +1,7 @@
 package com.practice.leetcode.graphs;
 
+//        Time Complexity: O(mn)
+//        Space Complexity: O(mn)
 public class NumberOfIslands {
     public int numIslands(char[][] grid) {
         if (grid == null || grid.length == 0) {
@@ -13,10 +15,10 @@ public class NumberOfIslands {
                 //we don't need to check for all 4 directions, cuz we moving from left to right and from up to down,
                 // so we check only up and left element, and if it's 1 we union with our element
                 if (grid[r][c] == '1') {
-                    if (r - 1 >= 0 && grid[r-1][c] == '1') {
-                        uf.union(r * nc + c, (r-1) * nc + c);
+                    if (r - 1 >= 0 && grid[r - 1][c] == '1') {
+                        uf.union(r * nc + c, (r - 1) * nc + c);
                     }
-                    if (c - 1 >= 0 && grid[r][c-1] == '1') {
+                    if (c - 1 >= 0 && grid[r][c - 1] == '1') {
                         uf.union(r * nc + c, r * nc + c - 1);
                     }
                 }
@@ -48,9 +50,18 @@ public class NumberOfIslands {
             }
         }
 
-        public int find(int i) {
-            if (parent[i] != i) parent[i] = find(parent[i]);
-            return parent[i];
+        public int find(int p) {
+            int root = p;
+            while (root != parent[root]) {
+                root = parent[root];
+            }
+            //path compression
+            while (p != root) {
+                int next = parent[p];
+                parent[p] = root;
+                p = next;
+            }
+            return root;
         }
 
         public void union(int x, int y) {

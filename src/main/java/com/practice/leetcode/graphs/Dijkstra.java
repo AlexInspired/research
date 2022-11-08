@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Set;
 
+//https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-in-java-using-priorityqueue/
 public class Dijkstra {
 
     // Member variables of this class
@@ -102,7 +103,7 @@ public class Dijkstra {
     public static void main(String arg[])
     {
 
-        int V = 5;
+        int V = 7;
         int source = 0;
 
         // Adjacency list representation of the
@@ -118,13 +119,15 @@ public class Dijkstra {
         }
 
         // Inputs for the GFG(dpq) graph
-        adj.get(0).add(new Node(1, 9));
-        adj.get(0).add(new Node(2, 6));
-        adj.get(0).add(new Node(3, 5));
-        adj.get(0).add(new Node(4, 3));
+        adj.get(0).add(new Node(6, 6));
+        adj.get(0).add(new Node(2, 5));
 
-        adj.get(2).add(new Node(1, 2));
-        adj.get(2).add(new Node(3, 4));
+        adj.get(1).add(new Node(5, 3));
+
+        adj.get(2).add(new Node(3, 1));
+        adj.get(3).add(new Node(4, 1));
+        adj.get(4).add(new Node(1, 2));
+        adj.get(6).add(new Node(1, 1));
 
         // Calculating the single source shortest path
         Dijkstra dpq = new Dijkstra(V);
