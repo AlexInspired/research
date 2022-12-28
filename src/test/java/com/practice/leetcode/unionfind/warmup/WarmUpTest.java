@@ -17,14 +17,6 @@ public class WarmUpTest {
                 {15, 17, 18, 20, 21},
                 {25, 26, 30, 31, 32},
         };
-
-        assertTrue(warmUp.find(11, givenArray));
-        assertTrue(warmUp.find(30, givenArray));
-        assertFalse(warmUp.find(16, givenArray));
-        assertTrue(warmUp.find(21, givenArray));
-        assertFalse(warmUp.find(6, givenArray));
-        assertFalse(warmUp.find(40, givenArray));
-        assertFalse(warmUp.find(0, givenArray));
     }
 
 }
