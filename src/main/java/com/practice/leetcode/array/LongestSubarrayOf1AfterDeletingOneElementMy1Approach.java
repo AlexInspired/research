@@ -1,6 +1,6 @@
 package com.practice.leetcode.array;
 
-public class LongestSubarrayOf1AfterDeletingOneElement {
+public class LongestSubarrayOf1AfterDeletingOneElementMy1Approach {
 //    {0, 1, 1, 1, 0, 1, 1, 0, 1};
     public int longestSubarray(int[] nums) {
         int globalMax = 0;
