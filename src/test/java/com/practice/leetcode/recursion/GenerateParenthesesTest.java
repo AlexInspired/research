@@ -11,7 +11,7 @@ public class GenerateParenthesesTest {
     @Test
     public void test() {
         GenerateParentheses generateParentheses = new GenerateParentheses();
-        List<String> result = generateParentheses.generateParenthesis(4);
+        List<String> result = generateParentheses.generateParenthesis(3);
         for (String s : result) {
             System.out.println(s);
         }
