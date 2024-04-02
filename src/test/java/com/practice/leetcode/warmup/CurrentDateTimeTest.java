@@ -1,6 +1,5 @@
-package com.practice.leetcode.unionfind.warmup;
+package com.practice.leetcode.warmup;
 
-import com.practice.leetcode.warmup.CurrentDateTime;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 

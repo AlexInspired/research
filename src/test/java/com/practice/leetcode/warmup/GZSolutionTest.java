@@ -1,6 +1,5 @@
-package com.practice.leetcode.unionfind.warmup;
+package com.practice.leetcode.warmup;
 
-import com.practice.leetcode.warmup.GZSolution;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -10,6 +9,6 @@ public class GZSolutionTest {
 
         GZSolution gzSolution = new GZSolution();
 
-        Assert.assertEquals(2 ,gzSolution.indexOfFirstUnique("abcfabe"));
+        Assert.assertEquals(2, gzSolution.indexOfFirstUnique("abcfabe"));
     }
 }

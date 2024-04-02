@@ -1,10 +1,6 @@
-package com.practice.leetcode.unionfind.warmup;
+package com.practice.leetcode.warmup;
 
-import com.practice.leetcode.warmup.WarmUp;
 import org.junit.Test;
-
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
 
 public class WarmUpTest {
 

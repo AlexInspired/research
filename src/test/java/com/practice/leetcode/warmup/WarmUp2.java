@@ -1,4 +1,4 @@
-package com.practice.leetcode.unionfind.warmup;
+package com.practice.leetcode.warmup;
 
 public class WarmUp2 {
 
@@ -11,7 +11,10 @@ public class WarmUp2 {
         node left;
         node right;
         node parent;
-    };
+    }
+
+    ;
+
     static void inOrderTraversal(node root) {
         if (root == null) {
             return;
@@ -21,6 +24,7 @@ public class WarmUp2 {
         System.out.print(root.data);
         inOrderTraversal(root.right);
     }
+
     static void inOrderTraversal(node root, node n, node succ) {
         if (root == null) {
             return;

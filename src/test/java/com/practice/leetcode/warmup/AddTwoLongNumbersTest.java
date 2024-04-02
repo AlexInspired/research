@@ -1,6 +1,5 @@
-package com.practice.leetcode.unionfind.warmup;
+package com.practice.leetcode.warmup;
 
-import com.practice.leetcode.warmup.AddTwoLongNumbers;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
