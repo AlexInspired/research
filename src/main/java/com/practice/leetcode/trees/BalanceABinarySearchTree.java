@@ -6,7 +6,7 @@ import java.util.List;
 public class BalanceABinarySearchTree {
 
     // пройти преордером и сделать из дерева отсортирванный массив
-    // из массива сделать сбалансирвоанное дерево binary подходом
+    // из массива сделать сбалансированное дерево binary подходом
     public TreeNode balanceBST(TreeNode root) {
 
         List<Integer> nums = BSTToSortedArray(root);
