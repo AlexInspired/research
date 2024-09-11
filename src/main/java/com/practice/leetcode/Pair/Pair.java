@@ -3,6 +3,7 @@ package com.practice.leetcode.Pair;
 
 public class Pair<T, T1> {
 
+    public Pair(){};
     public Pair(T left, T1 right){
         this.left = left;
         this.right = right;
