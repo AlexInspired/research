@@ -35,6 +35,7 @@ public class TopKFrequentWords {
         for (String word : frequencyMap.keySet()) {
             priorityQueue.offer(word);
 
+            //  frequencyMap.contains(word);
             if (priorityQueue.size() > k) {
                 priorityQueue.poll();
             }
