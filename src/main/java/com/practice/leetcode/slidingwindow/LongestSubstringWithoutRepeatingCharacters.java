@@ -1,5 +1,6 @@
 package com.practice.leetcode.slidingwindow;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
@@ -8,29 +9,24 @@ public class LongestSubstringWithoutRepeatingCharacters {
 
     //abcdbfeh
     public int lengthOfLongestSubstring(String s) {
-        if (s == "") return 0;
-        if(s.length() == 1) return 1;
-        char[] arr = s.toCharArray();
-        Map<Character, Integer> map = new HashMap<>();
-        PriorityQueue<Integer> counters = new PriorityQueue<>((a, b) -> b - a);
-        int counter = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if (map.containsKey(arr[i]) && i - map.get(arr[i]) <= counter) {
-                counters.offer(counter);
-                counter = i - map.get(arr[i]);
-                map.put(arr[i], i);
-            } else {
-                map.put(arr[i], i);
-                counter++;
-                if(i == arr.length - 1){
-                    counters.offer(counter);
-                }
+       int[] lastSeen = new int[128];
+
+        Arrays.fill(lastSeen, -1);
+        int left = 0, maxLen = 0;
+
+        for(int right = 0; right < s.length(); right++){
+            char c = s.charAt(right);
+            // Если символ уже был в текущем окне — сдвигаем left
+            if (lastSeen[c] >= left) {
+                left = lastSeen[c] + 1;
             }
+            // Обновляем позицию символа
+            lastSeen[c] = right;
+
+            // Обновляем максимальную длину
+            maxLen = Math.max(maxLen, right - left + 1);
         }
-        if(counters.peek() == null){
-            return s.length();
-        }
-        return counters.peek();
+        return maxLen;
     }
 
 }

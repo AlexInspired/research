@@ -18,7 +18,7 @@ public class DeleteNodeInABST {
 
         // Recursively search for the key in the right subtree if it is greater than the root value
         else if(key > root.val){
-           root.right =deleteNode(root.right, key);
+           root.right = deleteNode(root.right, key);
         }
 
         // If the key is equal to the root value, we have found the node to be deleted
