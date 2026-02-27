@@ -1,5 +1,6 @@
 package com.practice.leetcode.array;
 
+import java.util.PriorityQueue;
 import java.util.Random;
 
 // Time Complexity: O(N2) in worst case and O(N) on average
@@ -21,7 +22,7 @@ public class KthLargestElementInAnArray {
 
         // three condition
         // base case (works because partition() guarantees that returning pivot will
-        // contains the correct sorted position of index pivot) i.e. if pivot  == ksmallest
+        // contain the correct sorted position of index pivot) i.e. if pivot  == ksmallest
         // we know for sure that at this position the item is at its final sorted index
         if(pivot == kLargest)
             return nums[pivot];
@@ -55,5 +56,27 @@ public class KthLargestElementInAnArray {
         int temp = nums[i];
         nums[i] = nums[j];
         nums[j] = temp;
+    }
+
+
+    // using PriorityQueue
+    public int findKthLargest2(int[] nums, int k) {
+
+        // Мин-куча. На вершине будет наименьший элемент из тех, что в куче.
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>(k + 1);
+
+        for(int num : nums){
+
+            minHeap.offer(num);
+
+            // Если размер кучи превышает k, удаляем наименьший элемент.
+            // Таким образом, в куче остаются только k наибольших элементов.
+            if(minHeap.size() > k) {
+                minHeap.poll();
+            }
+        }
+
+        // Корень кучи — это k-й наибольший элемент всего массива
+        return minHeap.peek();
     }
 }

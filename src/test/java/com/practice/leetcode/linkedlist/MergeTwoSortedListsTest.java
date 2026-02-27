@@ -17,6 +17,8 @@ public class MergeTwoSortedListsTest {
         MergeTwoSortedLists.ListNode n22 = mergeTwoSortedLists.new ListNode(3, n23);
         MergeTwoSortedLists.ListNode n21 = mergeTwoSortedLists.new ListNode(1, n22);
 
-        mergeTwoSortedLists.mergeTwoLists(n11, n21);
+        MergeTwoSortedLists.ListNode result =  mergeTwoSortedLists.mergeTwoLists2(n11, n21);
+
+        int i = 1;
     }
 }
