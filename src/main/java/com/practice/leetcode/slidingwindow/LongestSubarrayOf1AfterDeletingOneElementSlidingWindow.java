@@ -2,6 +2,8 @@ package com.practice.leetcode.slidingwindow;
 
 public class LongestSubarrayOf1AfterDeletingOneElementSlidingWindow {
     //    {1, 1, 1, 0, 0, 1, 1, 0, 1};
+    //    [1,1,0,1]
+    //    [0,1,1,1,0,1,1,0,1]
     public int longestSubarray(int[] nums) {
         int start = -1;
         int zeroCount = 0;
